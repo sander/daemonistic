@@ -26,11 +26,8 @@ Try it at the REPL:
 ```clj
 (use 'daemonistic.oocsi)
 
-(def s (client "sender"))
-(connect! s)
-
-(def r (client "receiver"))
-(connect! r)
+(def s (connected-client! "sender"))
+(def r (connected-client! "receiver"))
 
 (def mychan (subscribe! r "mychan"))
 
