@@ -25,6 +25,7 @@
   (.send client chan (java.util.HashMap. val)))
 
 (defn channels [client] (.channels client))
+(defn clients [client] (.clients client))
 
 ;; It was easier to proxy Handler than to gen-class DataHandler
 (defn -data-handler [handler]
