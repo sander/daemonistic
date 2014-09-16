@@ -7,7 +7,7 @@ A Clojure library designed to work easily with [OOCSI](https://github.com/iddi/o
 Use [Leiningen](http://leiningen.org/). Install OOCSI first:
 
 ```sh
-git clone https://github.com/iddi/oocsi.git
+git clone https://github.com/sander/oocsi.git
 cd oocsi/client
 lein install
 ```
