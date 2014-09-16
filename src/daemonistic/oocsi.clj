@@ -12,6 +12,10 @@
 (defn disconnect! [client] (.disconnect client))
 (defn connected? [client] (.isConnected client))
 
+(defn connected-client! [name]
+  (let [c (client name)]
+    (if (connect! c) c)))
+
 (defmulti send! #(class %3))
 (defmethod send! String
   [client chan val]

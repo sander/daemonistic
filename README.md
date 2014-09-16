@@ -53,6 +53,14 @@ Try it at the REPL:
   (recur))
 ```
 
+To run the chat example, run a few clients using
+
+```sh
+lein run -m examples.chat <username>
+```
+
+where `<username>` is a unique name.
+
 ## License
 
 Copyright © 2014 Sander Dijkhuis
