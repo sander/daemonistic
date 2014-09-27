@@ -4,7 +4,7 @@ A Clojure library designed to work easily with [OOCSI](https://github.com/iddi/o
 
 ## Installation
 
-Use [Leiningen](http://leiningen.org/). Add deamonistic to your `project.clj`
+Use [Leiningen](http://leiningen.org/). Add daemonistic to your `project.clj`
 dependencies:
 
 [![Clojars Project](http://clojars.org/daemonistic/latest-version.svg)](http://clojars.org/daemonistic)
