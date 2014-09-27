@@ -4,20 +4,10 @@ A Clojure library designed to work easily with [OOCSI](https://github.com/iddi/o
 
 ## Installation
 
-Use [Leiningen](http://leiningen.org/). Install OOCSI first:
+Use [Leiningen](http://leiningen.org/). Add deamonistic to your `project.clj`
+dependencies:
 
-```sh
-git clone https://github.com/sander/oocsi.git
-cd oocsi/client
-lein install
-```
-
-Then install daemonistic by running `lein install` in this directory.
-You can now add it to your `project.clj` dependencies:
-
-```clj
-:dependencies [[daemonistic "0.1.0-SNAPSHOT"]
-```
+[![Clojars Project](http://clojars.org/daemonistic/latest-version.svg)](http://clojars.org/daemonistic)
 
 ## Usage
 
