@@ -30,18 +30,21 @@
 ;; It was easier to proxy Handler than to gen-class DataHandler
 (defn -data-handler [handler]
   (proxy [Handler] []
-    (receive [sender data ts]
-      (let [bais (java.io.ByteArrayInputStream. (Base64Coder/decode data))
-            ois (java.io.ObjectInputStream. bais)
-            output (.readObject ois)]
-        (handler sender (into {} output) ts)))))
-(defn subscribe! [client channel]
-  (let [ch (async/chan)]
-    (.subscribe
-     client channel
-     (-data-handler
-      #(async/put! ch {:sender %1
-                       :data %2
-                       :timestamp %3})))
-    ch))
+    (receive [sender data ts channel recipient]
+      (handler sender (into {} data) ts channel recipient))))
+(defn -chan-data-handler [ch]
+  (-data-handler #(async/put! ch {:sender %1
+                                  :data %2
+                                  :timestamp %3
+                                  :channel %4
+                                  :recipient %5})))
+(defn subscribe!
+  ([client channel]
+     (let [ch (async/chan)]
+       (.subscribe client channel (-chan-data-handler ch))
+       ch))
+  ([client]
+     (let [ch (async/chan)]
+       (.subscribe client (-chan-data-handler ch))
+       ch)))
 (defn unsubscribe! [client channel] (.unsubscribe client channel))
