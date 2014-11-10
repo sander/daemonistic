@@ -38,6 +38,30 @@ Try it at the REPL:
 (go-loop []
   (println "received: " (<! mychan))
   (recur))
+
+; identify
+(use 'daemonistic.services)
+(def id-sender (identify! s))
+
+; listen to identifications
+(def id-receiver (identify! r)
+(listen! id-receiver #(println "id:" %))
+
+; results in:
+; id: #{"receiver" "sender"}
+
+; stop identifying sender
+(stop! id-sender)
+
+; results in:
+; id: #{"receiver"}
+
+; stop listening
+(stop! id-receiver)
+
+; sync (wait a bit between both commands)
+(listen! (simple-sync! s) #(println "s" %))
+(listen! (simple-sync! r) #(println "r" %))
 ```
 
 To run the chat example, run a few clients using

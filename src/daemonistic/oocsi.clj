@@ -6,6 +6,8 @@
 
 (defn client [name] (OOCSIClient. name))
 
+(defn client-name [client] (.getName client))
+
 (defn connect!
   ([client] (connect! client "localhost" 4444))
   ([client host port] (.connect client host port)))
