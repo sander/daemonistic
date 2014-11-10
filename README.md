@@ -64,6 +64,12 @@ Try it at the REPL:
 (listen! (simple-sync! r) #(println "r" %))
 ```
 
+To run the sync example, run a few clients using
+
+```sh
+lein with-profile demo run examples.sync
+```
+
 To run the chat example, run a few clients using
 
 ```sh

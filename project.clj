@@ -7,4 +7,6 @@
                  [org.clojure/core.async "0.1.338.0-5c5012-alpha"]
                  [oocsi "0.5.1-SNAPSHOT"]]
   :scm {:name "git"
-        :url "https://github.com/sander/daemonistic"})
+        :url "https://github.com/sander/daemonistic"}
+  :profiles {:demo {:dependencies [[quil "2.2.2"]]
+                    :main examples.sync}})
