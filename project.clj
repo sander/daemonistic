@@ -1,4 +1,4 @@
-(defproject daemonistic "0.3.0-SNAPSHOT"
+(defproject daemonistic "0.3.1-SNAPSHOT"
   :description "OOCSI client API for Clojure using core.async"
   :url "https://github.com/sander/daemonistic"
   :license {:name "Eclipse Public License"
